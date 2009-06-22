@@ -13,6 +13,10 @@
 (autoload 'speedbar-frame-mode "speedbar" "Popup a speedbar frame" t)
 (autoload 'speedbar-get-focus "speedbar" "Jump to speedbar frame" t)
 (load "~/.emacs.d/site-lisp/nxml-mode-20041004/rng-auto.el")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
 
 ;; This is how emacs tells the file type by the file suffix.
 (setq auto-mode-alist
@@ -63,3 +67,16 @@
 (global-set-key "\M- " 'hippie-expand)
 (global-set-key [f7] 'call-last-kbd-macro)
 (global-set-key "\M-Arrow-Right" 'move-forward-word)
+
+;;;;;
+;;Run
+;;;;;
+(eval-after-load 'js2-mode
+  '(progn
+     (define-key js2-mode-map (kbd "TAB") (lambda()
+                                            (interactive)
+                                            (let ((yas/fallback-behavior 'return-nil))
+                                              (unless (yas/expand)
+                                                (indent-for-tab-command)
+                                                (if (looking-back "^\s*")
+                                                    (back-to-indentation))))))))
