@@ -64,7 +64,7 @@
 (global-set-key "\C-r" 'replace-regexp)
 (global-set-key "\C-n" 'setnu-mode)
 (global-set-key [f1] 'jao-toggle-selective-display)
-(global-set-key "\M- " 'hippie-expand)
+(global-set-key [?\S- ] 'hippie-expand)
 (global-set-key [f7] 'call-last-kbd-macro)
 (global-set-key "\M-Arrow-Right" 'move-forward-word)
 
