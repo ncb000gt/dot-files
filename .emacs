@@ -1,3 +1,10 @@
+;;;;;;;;;;;;;
+;; Things that can't wait
+;;;;;;;;;;;;;
+
+;; set tab distance to something, so it doesn't change randomly and confuse people
+(setq c-basic-offset 4)
+
 ;; Some common lisp for your liking
 (require 'cl)
 
@@ -6,6 +13,8 @@
 ;;;;;;;;;;;;;
 
 ; Load editing modes
+(add-to-list 'load-path "~/.emacs.d/site-lisp/scala-mode")
+(require 'scala-mode-auto)
 (load "~/.emacs.d/site-lisp/js2.elc")
 (autoload 'ruby-mode "ruby-mode" "Ruby mode" t)
 (autoload 'css-mode "css-mode" "CSS mode" t)
@@ -36,9 +45,6 @@
 
 ;; Don't create backup files
 (setq make-backup-files nil)
-
-;; set tab distance to something, so it doesn't change randomly and confuse people
-(setq c-basic-offset 4)
 
 ;; clipboard functions
 (setq x-select-enable-clipboard t)
