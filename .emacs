@@ -3,11 +3,11 @@
 
 ;; if you wish to add a new library to emacs just place the dot-el
 ;; file in this directory and you should then be able to load it.
-(defvar site-packages-dir (concat emacs-dir "site-packages/")
+(defvar site-lisp-dir (concat emacs-dir "site-lisp/")
   "Directory for additional packages.")
 
 ;; add the packages directory to the search path.
-(add-to-list 'load-path site-packages-dir)
+(add-to-list 'load-path site-lisp-dir)
 
 (require 'cl)
 
@@ -96,3 +96,36 @@
                                                 (indent-for-tab-command)
                                                 (if (looking-back "^\s*")
                                                     (back-to-indentation))))))))
+
+;; works by installing color-theme through emacs-goodies...
+;; apt-get install emacs-goodies =\
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/emacs-goodies-el/color-theme.el")
+(defun dark ()
+  (interactive)
+  (color-theme-install
+   '(dark
+      ((background-color . "#101e2e")
+      (background-mode . light)
+      (border-color . "#1a1a1a")
+      (cursor-color . "#fce94f")
+      (foreground-color . "#eeeeec")
+      (mouse-color . "black"))
+     (fringe ((t (:background "#1a1a1a"))))
+     (mode-line ((t (:foreground "#eeeeec" :background "#555753"))))
+     (region ((t (:background "#0d4519"))))
+     (font-lock-builtin-face ((t (:foreground "#729fcf"))))
+     (font-lock-comment-face ((t (:foreground "#888a85"))))
+     (font-lock-function-name-face ((t (:foreground "#edd400"))))
+     (font-lock-keyword-face ((t (:foreground "#729fcf"))))
+     (font-lock-string-face ((t (:foreground "#ad7fa8"))))
+     (font-lock-type-face ((t (:foreground"#8ae234"))))
+     (font-lock-variable-name-face ((t (:foreground "#eeeeec"))))
+     (minibuffer-prompt ((t (:foreground "#729fcf" :bold t))))
+     (font-lock-warning-face ((t (:foreground "Red" :bold t))))
+     )))
+(provide 'dark)
+
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (dark)))
