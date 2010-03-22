@@ -1,11 +1,14 @@
-;;;;;;;;;;;;;
-;; Things that can't wait
-;;;;;;;;;;;;;
+(defvar emacs-dir (concat (getenv "HOME") ".emacs.d/")
+  "Directory root for your Emacs stuff.")
 
-;; set tab distance to something, so it doesn't change randomly and confuse people
-(setq c-basic-offset 4)
+;; if you wish to add a new library to emacs just place the dot-el
+;; file in this directory and you should then be able to load it.
+(defvar site-packages-dir (concat emacs-dir "site-packages/")
+  "Directory for additional packages.")
 
-;; Some common lisp for your liking
+;; add the packages directory to the search path.
+(add-to-list 'load-path site-packages-dir)
+
 (require 'cl)
 
 ;;;;;;;;;;;;;
@@ -41,6 +44,9 @@
 ;;;;;;;;;;;;;;
 ;; Few Configs
 ;;;;;;;;;;;;;;
+;; set tab distance to something, so it doesn't change randomly and confuse people
+(setq c-basic-offset 4)
+
 (global-font-lock-mode t)
 
 ;; Don't create backup files
@@ -73,6 +79,10 @@
 (global-set-key [?\S- ] 'hippie-expand)
 (global-set-key [f7] 'call-last-kbd-macro)
 (global-set-key "\M-Arrow-Right" 'move-forward-word)
+;; rebind quit emacs to C-x-q (I keep hitting C-x-c by accident)
+(global-unset-key [(control x)(control c)])
+(global-set-key [(control x)(control q)]  'save-buffers-kill-emacs)
+
 
 ;;;;;
 ;;Run
