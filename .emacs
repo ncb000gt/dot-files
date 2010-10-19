@@ -46,8 +46,28 @@
 ;;;;;;;;;;;;;;
 ;; set tab distance to something, so it doesn't change randomly and confuse people
 (setq c-basic-offset 4)
+(setq indent-tabs-mode nil)
+
+;; absolutely force tabs on save in js2-mode
+(defun js2-mode-untabify ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "[ \t]+$" nil t)
+      (delete-region (match-beginning 0) (match-end 0)))
+    (goto-char (point-min))
+    (if (search-forward "\t" nil t)
+	(untabify (1- (point)) (point-max))))
+  nil)
+
+(add-hook 'js2-mode-hook 
+	  '(lambda ()
+	     (make-local-variable 'write-contents-hooks)
+	     (add-hook 'write-contents-hooks 'js2-mode-untabify)))
 
 (global-font-lock-mode t)
+
+;; Font size
+(set-face-attribute 'default nil :height 80)
 
 ;; Don't create backup files
 (setq make-backup-files nil)
@@ -79,7 +99,7 @@
 (global-set-key [?\S- ] 'hippie-expand)
 (global-set-key [f7] 'call-last-kbd-macro)
 (global-set-key "\M-Arrow-Right" 'move-forward-word)
-;; rebind quit emacs to C-x-q (I keep hitting C-x-c by accident)
+;; rebind quit emacs to C-x-C-q (I keep hitting C-x-C-c by accident)
 (global-unset-key [(control x)(control c)])
 (global-set-key [(control x)(control q)]  'save-buffers-kill-emacs)
 
