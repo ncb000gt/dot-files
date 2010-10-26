@@ -18,7 +18,7 @@
 ; Load editing modes
 (add-to-list 'load-path "~/.emacs.d/site-lisp/scala-mode")
 (require 'scala-mode-auto)
-(load "~/.emacs.d/site-lisp/js2.elc")
+(load "~/.emacs.d/site-lisp/js2-mode.elc")
 (autoload 'ruby-mode "ruby-mode" "Ruby mode" t)
 (autoload 'css-mode "css-mode" "CSS mode" t)
 (autoload 'light-symbol-mode "light-symbol" "Light Symbol Mode" t)
@@ -47,6 +47,9 @@
 ;; set tab distance to something, so it doesn't change randomly and confuse people
 (setq c-basic-offset 4)
 (setq indent-tabs-mode nil)
+
+
+(setq js2-consistent-level-indent-inner-bracket-p t)
 
 ;; absolutely force tabs on save in js2-mode
 (defun js2-mode-untabify ()
