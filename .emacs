@@ -44,6 +44,10 @@
 ;;;;;;;;;;;;;;
 ;; Few Configs
 ;;;;;;;;;;;;;;
+
+;; line numbers
+(require 'linum)
+
 ;; set tab distance to something, so it doesn't change randomly and confuse people
 (setq c-basic-offset 4)
 (setq indent-tabs-mode nil)
@@ -97,7 +101,7 @@
 
 ;; Custom keybinds
 (global-set-key "\C-r" 'replace-regexp)
-(global-set-key "\C-n" 'setnu-mode)
+;(global-set-key "\C-n" 'setnu-mode)
 (global-set-key [f1] 'jao-toggle-selective-display)
 (global-set-key [?\S- ] 'hippie-expand)
 (global-set-key [f7] 'call-last-kbd-macro)
@@ -152,3 +156,7 @@
 (eval-after-load "color-theme"
   '(progn
      (dark)))
+
+;;file/buffer exploration
+(load "~/.emacs.d/site-lisp/lusty-explorer.elc")
+(require 'lusty-explorer)
