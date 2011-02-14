@@ -29,8 +29,9 @@ set wildmode=longest,list
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" disable audible error bell
+" disable audible error bell and visual bell...
 set visualbell
+set vb t_vb=
 
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
@@ -133,3 +134,17 @@ endif
 map <C-t><right> :tabn<cr>
 map <C-t><left> :tabp<cr>
 map <C-t> :tabnew<cr>
+
+" JS Code Folding
+function! JavaScriptFold() 
+    setl foldmethod=syntax
+    setl foldlevelstart=1
+    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    function! FoldText()
+        return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    endfunction
+    setl foldtext=FoldText()
+endfunction
+au FileType javascript call JavaScriptFold()
+au FileType javascript setl fen
