@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/mnt/data/hbase/hbase-compressed-gz'
+let g:netrw_dirhist_2='/mnt/data/hbase/hbase-compressed-gz/conf'
+let g:netrw_dirhist_3='/home/ncampbell/Code/node-elasticsearch'
+let g:netrw_dirhist_4='/home/ncampbell/Code/node-elasticsearch/tests'
+let g:netrw_dirhist_5='/home/ncampbell/Code/node-elasticsearch'
+let g:netrw_dirhist_6='/home/ncampbell/Code/node-elasticsearch/tests'
+let g:netrw_dirhist_7='/home/ncampbell/Code/node-geoip'
+let g:netrw_dirhist_8='/home/ncampbell/Code/coffeebean'
