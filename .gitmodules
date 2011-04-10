@@ -1,3 +1,6 @@
 [submodule ".emacs.d/site-lisp/gist"]
 	path = .emacs.d/site-lisp/gist
 	url = git://github.com/defunkt/gist.el.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
