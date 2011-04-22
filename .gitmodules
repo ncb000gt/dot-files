@@ -58,3 +58,15 @@
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
+	url = git://github.com/ewiplayer/vim-scala.git
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/csapprox"]
+	path = .vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule ".vim/bundle/LustyExplorer"]
+	path = .vim/bundle/LustyExplorer
+	url = git://github.com/vim-scripts/LustyExplorer.git

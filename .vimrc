@@ -1,11 +1,21 @@
+let os = substitute(system('uname'), "\n", "", "")
+
+if os == "Linux"
+    " Needed on some linux distros.
+    " see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+    filetype off 
+    call pathogen#helptags()
+    call pathogen#runtime_append_all_bundles()
+endif 
+
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " Use all-space indentation, width of 4 spaces
-set tabstop=4
-set softtabstop=4   
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " Statusbar
@@ -135,16 +145,7 @@ map <C-t><right> :tabn<cr>
 map <C-t><left> :tabp<cr>
 map <C-t> :tabnew<cr>
 
-" JS Code Folding
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
+" Ack
+if os == "Linux"
+    let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+endif

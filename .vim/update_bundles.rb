@@ -20,11 +20,15 @@ git_bundles = [
     "git://github.com/tsaleh/vim-tcomment.git",
     "git://github.com/vim-ruby/vim-ruby.git",
     "git://github.com/kchmck/vim-coffee-script.git",
+    "git://github.com/ewiplayer/vim-scala.git",
+    "git://github.com/mileszs/ack.vim.git",
+    "git://github.com/godlygeek/csapprox.git",
+    "git://github.com/vim-scripts/LustyExplorer.git",
 ]
 
 vim_org_scripts = [
     ["IndexedSearch", "7062",  "plugin"],
-    ["gist",          "12732", "plugin"],
+    ["gist",          "15452", "plugin"],
     ["jquery",        "12107", "syntax"],
 ]
 
@@ -34,7 +38,6 @@ require 'open-uri'
 if FileUtils.pwd().split('/').last() == '.vim'
     bundles_dir = File.join(File.dirname(__FILE__), ".vim", "bundle")
 
-    puts bundles_dir
     git_bundles.each do |url|
         dir = url.split('/').last.sub(/\.git$/, '')
         module_dir = File.join('bundle', dir)
