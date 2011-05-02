@@ -42,13 +42,19 @@ if FileUtils.pwd().split('/').last() == '.vim'
     git_bundles.each do |url|
         dir = url.split('/').last.sub(/\.git$/, '')
         module_dir = File.join('bundle', dir)
-        if Dir.exists?(module_dir)
+        if Dir.exists?(module_dir) and not Dir[module_dir+'/*'].empty?
             puts "  Updating #{dir} module"
             FileUtils.cd(module_dir)
             `git pull origin master`
             dots = module_dir.split('/').map {|i| '..'}
             dots = dots.join('/')
             FileUtils.cd(dots)
+        elsif Dir.exists?(module_dir) and Dir[module_dir+'/*'].empty?
+            puts "  Initializing module"
+            FileUtils.cd('..')
+            `git submodule init #{bundles_dir}/#{dir}`
+            `git submodule update #{bundles_dir}/#{dir}`
+            FileUtils.cd('.vim')
         else 
             puts "  Unpacking #{url} into #{dir}"
             FileUtils.cd('..')
