@@ -26,6 +26,7 @@ git_bundles = [
     "git://github.com/vim-scripts/LustyExplorer.git",
     "git://github.com/scrooloose/nerdcommenter.git",
     "git://github.com/godlygeek/tabular.git",
+    "git://github.com/oscarh/vimerl.git",
 ]
 
 vim_org_scripts = [
