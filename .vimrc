@@ -53,6 +53,9 @@ set incsearch		" do incremental searching
 " Allow flipping between dirty buffers 
 set hidden
 
+" Relative Line Numbers (to the cursor)
+set rnu
+
 " Make searches case-insensive unless there is a capitalized char in the
 " search
 set ignorecase 
