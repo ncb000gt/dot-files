@@ -20,7 +20,7 @@ git_bundles = [
     "git://github.com/tsaleh/vim-tcomment.git",
     "git://github.com/vim-ruby/vim-ruby.git",
     "git://github.com/kchmck/vim-coffee-script.git",
-    "git://github.com/ewiplayer/vim-scala.git",
+    "https://github.com/derekwyatt/vim-scala.git",
     "git://github.com/mileszs/ack.vim.git",
     "git://github.com/godlygeek/csapprox.git",
     "git://github.com/vim-scripts/LustyExplorer.git",
