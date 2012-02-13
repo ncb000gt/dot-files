@@ -33,6 +33,38 @@ if has("gui_running")
     set guifont=Inconsolata\ 8
 endif
 
+" Increase or decrease the font size
+let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
+let s:minfontsize = 6
+let s:maxfontsize = 16
+function! AdjustFontSize(amount)
+  if has("gui_gtk2") && has("gui_running")
+    let fontname = substitute(&guifont, s:pattern, '\1', '')
+    let cursize = substitute(&guifont, s:pattern, '\2', '')
+    let newsize = cursize + a:amount
+    if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
+      let newfont = fontname . newsize
+      let &guifont = newfont
+    endif
+    set columns=120
+  else
+    echoerr "You need to run the GTK2 version of Vim to use this function."
+  endif
+endfunction
+
+function! LargerFont()
+  call AdjustFontSize(1)
+endfunction
+command! LargerFont call LargerFont()
+
+function! SmallerFont()
+  call AdjustFontSize(-1)
+endfunction
+command! SmallerFont call SmallerFont()
+
+nnoremap <C-Up> :call LargerFont()<CR>
+nnoremap <C-Down> :call SmallerFont()<CR>
+
 " Show line numbers
 set number
 
@@ -147,9 +179,9 @@ if !exists(":DiffOrig")
 endif
 
 " Tab mappings
-map <C-t><right> :tabn<cr>
-map <C-t><left> :tabp<cr>
-map <C-t> :tabnew<cr>
+"map <C-t><right> :tabn<cr>
+"map <C-t><left> :tabp<cr>
+"map <C-t> :tabnew<cr>
 
 " Ack
 if os == "Linux"
@@ -164,9 +196,16 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+"autocmd FileType java set tags=~/.trunk-tags
 
 "Backup control
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
+
+" Kill the arrow keys to force HJKL usage.
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
