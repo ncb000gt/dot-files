@@ -67,9 +67,6 @@
 [submodule ".vim/bundle/csapprox"]
 	path = .vim/bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-[submodule ".vim/bundle/LustyExplorer"]
-	path = .vim/bundle/LustyExplorer
-	url = git://github.com/vim-scripts/LustyExplorer.git
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
