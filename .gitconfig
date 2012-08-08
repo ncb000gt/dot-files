@@ -1,11 +1,12 @@
 [user]
 	name = Nick Campbell
 	email = nicholas.j.campbell@gmail.com
-#taken from garybernhardt dotfiles.
 [diff]
 [color]
     ui = auto
 [alias]
+    up = pull origin master
+#taken from garybernhardt dotfiles.
     st = status
     ci = commit
     co = checkout
