@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/VimClojure"]
 	path = .vim/bundle/VimClojure
 	url = https://github.com/vim-scripts/VimClojure
+[submodule ".vim/bundle/google.vim"]
+	path = .vim/bundle/google.vim
+	url = https://github.com/vim-scripts/google.vim.git
