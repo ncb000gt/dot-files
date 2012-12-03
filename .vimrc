@@ -13,9 +13,9 @@ call pathogen#runtime_append_all_bundles()
 set nocompatible
 
 " set tab width, 1 tab should be 1 spaces
-set tabstop=1
-set softtabstop=1
-set shiftwidth=1
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 "set expandtab
 
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
