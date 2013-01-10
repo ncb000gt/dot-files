@@ -18,6 +18,8 @@ set softtabstop=2
 set shiftwidth=2
 "set expandtab
 
+set list
+
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
 " Statusbar
