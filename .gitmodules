@@ -94,3 +94,9 @@
 [submodule ".vim/bundle/google.vim"]
 	path = .vim/bundle/google.vim
 	url = https://github.com/vim-scripts/google.vim.git
+[submodule ".vim/bundle/julia-vim"]
+	path = .vim/bundle/julia-vim
+	url = https://github.com/JuliaLang/julia-vim.git
+[submodule ".vim/bundle/vim-golang"]
+	path = .vim/bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang.git
