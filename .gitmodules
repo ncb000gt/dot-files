@@ -100,3 +100,9 @@
 [submodule ".vim/bundle/vim-golang"]
 	path = .vim/bundle/vim-golang
 	url = https://github.com/jnwhiteh/vim-golang.git
+[submodule ".vim/bundle/vim-R"]
+	path = .vim/bundle/vim-R
+	url = https://github.com/jcfaria/Vim-R-plugin.git
+[submodule ".vim/bundle/vim-screen"]
+	path = .vim/bundle/vim-screen
+	url = https://github.com/vim-scripts/Screen-vim---gnu-screentmux.git
