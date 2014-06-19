@@ -27,7 +27,8 @@ git_bundles = [
     "git://github.com/scrooloose/nerdcommenter.git",
     "git://github.com/godlygeek/tabular.git",
     "git://github.com/oscarh/vimerl.git",
-    "https://github.com/Lokaltog/vim-powerline.git",
+    "git://github.com/Lokaltog/vim-powerline.git",
+		"git://github.com/altercation/vim-colors-solarized.git"
 ]
 
 vim_org_scripts = [

@@ -106,3 +106,9 @@
 [submodule ".vim/bundle/vim-screen"]
 	path = .vim/bundle/vim-screen
 	url = https://github.com/vim-scripts/Screen-vim---gnu-screentmux.git
+[submodule ".vim/bundle/LustyExplorer"]
+	path = .vim/bundle/LustyExplorer
+	url = git://github.com/vim-scripts/LustyExplorer.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
