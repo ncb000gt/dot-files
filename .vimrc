@@ -20,6 +20,8 @@ set shiftwidth=2
 
 set list
 
+autocmd FileType jade setlocal commentstring=//-\ %s
+autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 "expandtab
 
@@ -115,9 +117,7 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+if has('mouse') | set mouse=a | endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

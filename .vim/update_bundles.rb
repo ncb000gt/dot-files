@@ -28,13 +28,16 @@ git_bundles = [
     "git://github.com/godlygeek/tabular.git",
     "git://github.com/oscarh/vimerl.git",
     "git://github.com/Lokaltog/vim-powerline.git",
-		"git://github.com/altercation/vim-colors-solarized.git"
+		"git://github.com/altercation/vim-colors-solarized.git",
+		"https://github.com/pangloss/vim-javascript",
+		"git://github.com/digitaltoad/vim-jade.git",
+		"https://github.com/mxw/vim-jsx"
 ]
 
 vim_org_scripts = [
     ["IndexedSearch", "7062",  "plugin"],
-    ["gist",          "15452", "plugin"],
-    ["jquery",        "12107", "syntax"],
+    ["gist",          "15452", "plugin"]
+    #["jquery",        "12107", "syntax"],
 ]
 
 require 'fileutils'
