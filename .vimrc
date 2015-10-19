@@ -95,6 +95,9 @@ set smartcase
 " map leader to ,
 let mapleader = ","
 
+"Unite
+nnoremap <leader>S :Unite -start-insert file_rec<cr>
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
  
