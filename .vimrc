@@ -23,6 +23,7 @@ set list
 autocmd FileType jade setlocal commentstring=//-\ %s
 autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 "expandtab
 
 " Lose the GUI
@@ -98,7 +99,7 @@ let mapleader = ","
 "Unite
 nnoremap <leader>S :Unite -start-insert file_rec<cr>
 
-" Shortcut to rapidly toggle `set list`
+" Shortcut to rapidly toggle whitespace
 nmap <leader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -121,6 +122,8 @@ inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse') | set mouse=a | endif
+
+set t_Co=16 " done to ensure Nord color scheme works properly
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -169,6 +172,14 @@ else
 
 endif " has("autocmd")
 
+augroup vimrc_autocmds
+	autocmd!
+	" highlight characters past column 80
+	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+	autocmd FileType python match Excess /\%80v.*/
+	autocmd FileType python set nowrap
+augroup END
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -188,7 +199,7 @@ if os == "Linux"
 endif
 
 " Omnicomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=jedi#completions
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -210,16 +221,60 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " Load colorscheme
-let g:solarized_termcolors=256
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme nord
 set colorcolumn=80
 
 set laststatus=2 "always show status
-" Powerline
-let g:Powerline_symbols = "fancy"
+" Airline
+let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = "fancy"
 
-" Statusbar
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+" python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 0
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 0
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+" py3
+let g:pymode_python = 'python3'
+
+" gitgutter
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_added = '+'
+highlight GitGutterAdd guifg = '#A3E28B'
