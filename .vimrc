@@ -5,8 +5,6 @@ if os == "Linux"
     " see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
     filetype off 
 endif 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -14,6 +12,7 @@ set nocompatible
 
 " turn ale on
 filetype off
+call pathogen#infect()
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 
