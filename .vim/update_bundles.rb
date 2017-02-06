@@ -3,18 +3,20 @@
 git_bundles = [ 
 	#language support
 	"git://github.com/vim-ruby/vim-ruby.git",
-	"git://github.com/kchmck/vim-coffee-script.git",
 	"https://github.com/derekwyatt/vim-scala.git",
 	"git://github.com/oscarh/vimerl.git",
-	"https://github.com/pangloss/vim-javascript",
-	"git://github.com/digitaltoad/vim-jade.git",
-	"https://github.com/mxw/vim-jsx",
 	"https://github.com/elixir-lang/vim-elixir",
+	"git://github.com/digitaltoad/vim-jade.git",
+	"git://github.com/kchmck/vim-coffee-script.git",
+	"https://github.com/pangloss/vim-javascript",
+	"https://github.com/mxw/vim-jsx",
+	"https://github.com/elzr/vim-json",
 	"https://github.com/python-mode/python-mode",
-	"git://github.com/tpope/vim-markdown.git",
 	"https://github.com/fatih/vim-go",
+	"git://github.com/tpope/vim-markdown.git",
 
 	#python utils
+	"https://github.com/jmcantrell/vim-virtualenv",
 	"https://github.com/davidhalter/jedi-vim.git", # completion
 
 	#git
@@ -31,9 +33,15 @@ git_bundles = [
 	"git://github.com/tpope/vim-repeat.git", # let plugins use `.`
 	"git://github.com/tpope/vim-surround.git", # surround with common start/ends
 	"git://github.com/mileszs/ack.vim.git", # ack support
-	"git://github.com/tsaleh/vim-tcomment.git", # commenting
+	"https://github.com/tomtom/tcomment_vim", # commenting
 	"git://github.com/godlygeek/tabular.git", # align by regex
 	"https://github.com/tpope/vim-abolish", # handle string abbrev & replacement
+	"https://github.com/mhinz/vim-startify", # vim start screen
+	"https://github.com/pbrisbin/vim-mkdir", # mkdir -p
+	"https://github.com/ap/vim-css-color", # bg highlight of css colors
+	"https://github.com/w0rp/ale", # async linting
+	"https://github.com/Valloric/MatchTagAlways", # html style tag matching
+	"https://github.com/alvan/vim-closetag", # automatically create closing tag
 ]
 
 vim_org_scripts = [
@@ -66,7 +74,7 @@ if FileUtils.pwd().split('/').last() == '.vim'
         else 
             puts "  Unpacking #{url} into #{dir}"
             FileUtils.cd('..')
-            `git submodule add #{url} #{bundles_dir}/#{dir}`
+            `git submodule add --force #{url} #{bundles_dir}/#{dir}`
             FileUtils.cd('.vim')
         end
         FileUtils.rm_rf(File.join(dir, ".git"))

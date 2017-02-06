@@ -12,6 +12,11 @@ call pathogen#runtime_append_all_bundles()
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" turn ale on
+filetype off
+let &runtimepath.=',~/.vim/bundle/ale'
+filetype plugin on
+
 " set tab width, 1 tab should be 1 spaces
 set tabstop=2
 set softtabstop=2
@@ -19,12 +24,6 @@ set shiftwidth=2
 "set expandtab
 
 set list
-
-autocmd FileType jade setlocal commentstring=//-\ %s
-autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-"expandtab
 
 " Lose the GUI
 if has("gui_running")
@@ -77,10 +76,10 @@ set backspace=indent,eol,start
 set visualbell
 set vb t_vb=
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50 " keep 50 lines of command line history
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
 
 " Allow flipping between dirty buffers 
 set hidden
@@ -92,23 +91,20 @@ set rnu
 " search
 set ignorecase 
 set smartcase
+"
+" Start scrolling when certain distance from edges of window.
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 
 " map leader to ,
 let mapleader = ","
-
-"Unite
-nnoremap <leader>S :Unite -start-insert file_rec<cr>
 
 " Shortcut to rapidly toggle whitespace
 nmap <leader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
-" Eclim settings
-nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
-nnoremap <silent> <buffer> <leader>d :JavaDocSearch -x declarations<cr>
-nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -132,12 +128,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Markdown stuff
-augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -149,36 +139,58 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
   augroup END
 
-else
+  " Markdown stuff
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-augroup vimrc_autocmds
-	autocmd!
+	" filetype specific settings
+  autocmd FileType jade setlocal commentstring=//-\ %s
+  autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+  "autocmd FileType java set tags=~/.trunk-tags
+  autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
 	" highlight characters past column 80
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 	autocmd FileType python match Excess /\%80v.*/
-	autocmd FileType python set nowrap
-augroup END
+
+  " code completion
+  autocmd FileType python set omnifunc=jedi#completions
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  autocmd FileType c set omnifunc=ccomplete#Complete
+
+  " config files need styles/syntax too?
+  autocmd BufNewFile,BufRead .babelrc set filetype=javascript
+  autocmd BufNewFile,BufRead .eslintrc,.reduxrc set filetype=json
+  autocmd BufNewFile,BufRead gitconfig set filetype=gitconfig
+
+else
+
+  set autoindent " always set autoindenting on
+
+endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -197,16 +209,6 @@ endif
 if os == "Linux"
     let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
-
-" Omnicomplete
-autocmd FileType python set omnifunc=jedi#completions
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-"autocmd FileType java set tags=~/.trunk-tags
 
 "Backup control
 " Don't write backup file if vim is being called by "crontab -e"
@@ -228,7 +230,14 @@ set colorcolumn=80
 set laststatus=2 "always show status
 " Airline
 let g:airline_powerline_fonts = 1
-"let g:Powerline_symbols = "fancy"
+
+" gitgutter
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_added = '+'
+highlight GitGutterAdd guifg = '#A3E28B'
+
+" python with virtualenv support
+let g:virtualenv_auto_activate = 1
 
 " python-mode
 " Activate rope
@@ -249,18 +258,12 @@ let g:pymode_rope = 0
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
-"Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-" Auto check on save
-let g:pymode_lint_write = 1
-
 " Support virtualenv
 let g:pymode_virtualenv = 0
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
+" let g:pymode_breakpoint = 0
+" let g:pymode_breakpoint_bind = '<leader>b'
 
 " syntax highlighting
 let g:pymode_syntax = 1
@@ -274,7 +277,41 @@ let g:pymode_folding = 0
 " py3
 let g:pymode_python = 'python3'
 
-" gitgutter
-let g:gitgutter_sign_modified = '•'
-let g:gitgutter_sign_added = '+'
-highlight GitGutterAdd guifg = '#A3E28B'
+
+" ale configuration
+let g:ale_sign_error = 'EE'
+let g:ale_sign_warning = 'WW'
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\   'python': ['flake8', 'pep8'],
+\   'javascript': ['eslint'],
+\}
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+nnoremap <leader>] :MtaJumpToOtherTag<cr>
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'javascript.jsx' : 1,
+    \}
+
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb'
+
+let g:startify_list_order = [
+    \ ['   MRU:'],
+    \ 'files',
+    \ ['   MRU (dir)'],
+    \ 'dir',
+    \ ['   Sessions:'],
+    \ 'sessions',
+    \ ]
+
+" Move last thing yanked to system clipboard.
+nnoremap <leader>yC :let @+=@"<cr>:echo "copied!"<cr>
+
+" Format Json and set filetype (adapted from
+" coderwall.com/p/faceag/format-json-in-vim)
+noremap <silent> =JF :%!python -m json.tool<CR> :setfiletype json<CR>
