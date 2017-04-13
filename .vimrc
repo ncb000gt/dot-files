@@ -71,6 +71,10 @@ set wildmode=longest,list
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" watch files for changes and reload them
+set autoread
+au CursorHold * checktime
+
 " disable audible error bell and visual bell...
 set visualbell
 set vb t_vb=
@@ -141,7 +145,7 @@ if has("autocmd")
     au!
 
     " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+    autocmd FileType text setlocal textwidth=120
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -167,12 +171,12 @@ if has("autocmd")
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
   "autocmd FileType java set tags=~/.trunk-tags
   autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
-	" highlight characters past column 80
+	" highlight characters past column 120
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-	autocmd FileType python match Excess /\%80v.*/
+	autocmd FileType python match Excess /\%120v.*/
 
   " code completion
-  autocmd FileType python set omnifunc=jedi#completions
+  "autocmd FileType python set omnifunc=python#completions
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -224,7 +228,10 @@ noremap <Right> <nop>
 " Load colorscheme
 syntax enable
 colorscheme nord
-set colorcolumn=80
+set colorcolumn=120
+
+" spell check
+set spell spelllang=en_us
 
 set laststatus=2 "always show status
 " Airline
@@ -238,52 +245,34 @@ highlight GitGutterAdd guifg = '#A3E28B'
 " python with virtualenv support
 let g:virtualenv_auto_activate = 1
 
-" python-mode
-" Activate rope
-" Keys:
-" K             Show python docs
-" <Ctrl-Space>  Rope autocomplete
-" <Ctrl-c>g     Rope goto definition
-" <Ctrl-c>d     Rope show documentation
-" <Ctrl-c>f     Rope find occurrences
-" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
-" [[            Jump on previous class or function (normal, visual, operator modes)
-" ]]            Jump on next class or function (normal, visual, operator modes)
-" [M            Jump on previous class or method (normal, visual, operator modes)
-" ]M            Jump on next class or method (normal, visual, operator modes)
+" pymode
 let g:pymode_rope = 0
-
-" Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
-
-" Support virtualenv
-let g:pymode_virtualenv = 0
-
-" Enable breakpoints plugin
-" let g:pymode_breakpoint = 0
-" let g:pymode_breakpoint_bind = '<leader>b'
-
-" syntax highlighting
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" Don't autofold code
+let g:pymode_lint = 0
 let g:pymode_folding = 0
-
-" py3
 let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 120
 
+" golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 " ale configuration
 let g:ale_sign_error = 'EE'
 let g:ale_sign_warning = 'WW'
 let g:ale_sign_column_always = 1
+let g:ale_python_flake8_args = '--max-line-length=120'
 let g:ale_linters = {
-\   'python': ['flake8', 'pep8'],
+\   'python': ['flake8'],
 \   'javascript': ['eslint'],
+\   'go': ['golint'],
 \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -297,16 +286,7 @@ let g:mta_filetypes = {
     \ 'javascript.jsx' : 1,
     \}
 
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb'
-
-let g:startify_list_order = [
-    \ ['   MRU:'],
-    \ 'files',
-    \ ['   MRU (dir)'],
-    \ 'dir',
-    \ ['   Sessions:'],
-    \ 'sessions',
-    \ ]
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.jsx,*.html.erb'
 
 " Move last thing yanked to system clipboard.
 nnoremap <leader>yC :let @+=@"<cr>:echo "copied!"<cr>

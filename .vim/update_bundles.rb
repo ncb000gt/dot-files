@@ -6,8 +6,6 @@ git_bundles = [
 	"https://github.com/derekwyatt/vim-scala.git",
 	"git://github.com/oscarh/vimerl.git",
 	"https://github.com/elixir-lang/vim-elixir",
-	"git://github.com/digitaltoad/vim-jade.git",
-	"git://github.com/kchmck/vim-coffee-script.git",
 	"https://github.com/pangloss/vim-javascript",
 	"https://github.com/mxw/vim-jsx",
 	"https://github.com/elzr/vim-json",
@@ -17,16 +15,13 @@ git_bundles = [
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",
-	"https://github.com/davidhalter/jedi-vim.git", # completion
 
 	#git
 	"git://github.com/tpope/vim-fugitive.git",
 	"https://github.com/airblade/vim-gitgutter.git",
 
 	#theming
-	"git://github.com/altercation/vim-colors-solarized.git",
 	"https://github.com/vim-airline/vim-airline",
-	"https://github.com/morhetz/gruvbox.git",
 	"https://github.com/arcticicestudio/nord-vim",
 
 	#utils
@@ -36,12 +31,12 @@ git_bundles = [
 	"https://github.com/tomtom/tcomment_vim", # commenting
 	"git://github.com/godlygeek/tabular.git", # align by regex
 	"https://github.com/tpope/vim-abolish", # handle string abbrev & replacement
-	"https://github.com/mhinz/vim-startify", # vim start screen
 	"https://github.com/pbrisbin/vim-mkdir", # mkdir -p
 	"https://github.com/ap/vim-css-color", # bg highlight of css colors
 	"https://github.com/w0rp/ale", # async linting
 	"https://github.com/Valloric/MatchTagAlways", # html style tag matching
 	"https://github.com/alvan/vim-closetag", # automatically create closing tag
+	"https://github.com/editorconfig/editorconfig-vim", # uniform editor configs
 ]
 
 vim_org_scripts = [
