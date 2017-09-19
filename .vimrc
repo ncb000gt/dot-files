@@ -294,3 +294,15 @@ nnoremap <leader>yC :let @+=@"<cr>:echo "copied!"<cr>
 " Format Json and set filetype (adapted from
 " coderwall.com/p/faceag/format-json-in-vim)
 noremap <silent> =JF :%!python -m json.tool<CR> :setfiletype json<CR>
+
+" unite config
+if executable('ag')
+	" Use ag (the silver searcher)
+	" https://github.com/ggreer/the_silver_searcher
+	let g:unite_source_grep_command = 'ag'
+	let g:unite_source_grep_default_opts =
+				\ '-i --line-numbers --nocolor ' .
+				\ '--nogroup --hidden --ignore ' .
+				\ '''.hg'' --ignore ''.svn'' --ignore' .
+				\ ' ''.git'' --ignore ''.bzr'''
+	let g:unite_source_grep_recursive_opt = ''
