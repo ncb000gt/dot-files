@@ -12,6 +12,7 @@ git_bundles = [
 	"https://github.com/python-mode/python-mode",
 	"https://github.com/fatih/vim-go",
 	"git://github.com/tpope/vim-markdown.git",
+	"https://github.com/artur-shaik/vim-javacomplete2.git",
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",
@@ -37,6 +38,9 @@ git_bundles = [
 	"https://github.com/Valloric/MatchTagAlways", # html style tag matching
 	"https://github.com/alvan/vim-closetag", # automatically create closing tag
 	"https://github.com/editorconfig/editorconfig-vim", # uniform editor configs
+	"https://github.com/Shougo/denite.nvim", # user interfaces
+	"https://github.com/airblade/vim-rooter", # set vim working dir
+	"https://github.com/Valloric/YouCompleteMe", # code completion
 ]
 
 vim_org_scripts = [
