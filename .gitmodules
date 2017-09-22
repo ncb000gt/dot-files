@@ -52,51 +52,6 @@
 [submodule "vim_bundles/nord-vim"]
 	path = vim_bundles/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim
-[submodule "bundles/vim-repeat"]
-	path = bundles/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
-[submodule "bundles/vim-surround"]
-	path = bundles/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "bundles/ack-vim"]
-	path = bundles/ack-vim
-	url = git://github.com/mileszs/ack.vim.git
-[submodule "bundles/tcomment_vim"]
-	path = bundles/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim
-[submodule "bundles/tabular"]
-	path = bundles/tabular
-	url = git://github.com/godlygeek/tabular.git
-[submodule "bundles/vim-abolish"]
-	path = bundles/vim-abolish
-	url = https://github.com/tpope/vim-abolish
-[submodule "bundles/vim-mkdir"]
-	path = bundles/vim-mkdir
-	url = https://github.com/pbrisbin/vim-mkdir
-[submodule "bundles/vim-css-color"]
-	path = bundles/vim-css-color
-	url = https://github.com/ap/vim-css-color
-[submodule "bundles/ale"]
-	path = bundles/ale
-	url = https://github.com/w0rp/ale
-[submodule "bundles/MatchTagAlways"]
-	path = bundles/MatchTagAlways
-	url = https://github.com/Valloric/MatchTagAlways
-[submodule "bundles/vim-closetag"]
-	path = bundles/vim-closetag
-	url = https://github.com/alvan/vim-closetag
-[submodule "bundles/editorconfig-vim"]
-	path = bundles/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim
-[submodule "bundles/denite.nvim"]
-	path = bundles/denite.nvim
-	url = https://github.com/Shougo/denite.nvim
-[submodule "bundles/vim-rooter"]
-	path = bundles/vim-rooter
-	url = https://github.com/airblade/vim-rooter
-[submodule "bundles/YouCompleteMe"]
-	path = bundles/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim_bundles/vim-repeat"]
 	path = vim_bundles/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
