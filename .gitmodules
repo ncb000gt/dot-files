@@ -4,3 +4,141 @@
 [submodule ".global_ignore"]
 	path = .global_ignore
 	url = https://github.com/github/gitignore
+[submodule "vim_bundles/vim-ruby"]
+	path = vim_bundles/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim_bundles/vim-scala"]
+	path = vim_bundles/vim-scala
+	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "vim_bundles/vimerl"]
+	path = vim_bundles/vimerl
+	url = git://github.com/oscarh/vimerl.git
+[submodule "vim_bundles/vim-elixir"]
+	path = vim_bundles/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "vim_bundles/vim-javascript"]
+	path = vim_bundles/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim_bundles/vim-jsx"]
+	path = vim_bundles/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "vim_bundles/vim-json"]
+	path = vim_bundles/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule "vim_bundles/python-mode"]
+	path = vim_bundles/python-mode
+	url = https://github.com/python-mode/python-mode
+[submodule "vim_bundles/vim-go"]
+	path = vim_bundles/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "vim_bundles/vim-markdown"]
+	path = vim_bundles/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim_bundles/vim-javacomplete2"]
+	path = vim_bundles/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule "vim_bundles/vim-virtualenv"]
+	path = vim_bundles/vim-virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "vim_bundles/vim-fugitive"]
+	path = vim_bundles/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim_bundles/vim-gitgutter"]
+	path = vim_bundles/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim_bundles/vim-airline"]
+	path = vim_bundles/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim_bundles/nord-vim"]
+	path = vim_bundles/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim
+[submodule "bundles/vim-repeat"]
+	path = bundles/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "bundles/vim-surround"]
+	path = bundles/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "bundles/ack-vim"]
+	path = bundles/ack-vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "bundles/tcomment_vim"]
+	path = bundles/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
+[submodule "bundles/tabular"]
+	path = bundles/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "bundles/vim-abolish"]
+	path = bundles/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "bundles/vim-mkdir"]
+	path = bundles/vim-mkdir
+	url = https://github.com/pbrisbin/vim-mkdir
+[submodule "bundles/vim-css-color"]
+	path = bundles/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule "bundles/ale"]
+	path = bundles/ale
+	url = https://github.com/w0rp/ale
+[submodule "bundles/MatchTagAlways"]
+	path = bundles/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways
+[submodule "bundles/vim-closetag"]
+	path = bundles/vim-closetag
+	url = https://github.com/alvan/vim-closetag
+[submodule "bundles/editorconfig-vim"]
+	path = bundles/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "bundles/denite.nvim"]
+	path = bundles/denite.nvim
+	url = https://github.com/Shougo/denite.nvim
+[submodule "bundles/vim-rooter"]
+	path = bundles/vim-rooter
+	url = https://github.com/airblade/vim-rooter
+[submodule "bundles/YouCompleteMe"]
+	path = bundles/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim_bundles/vim-repeat"]
+	path = vim_bundles/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim_bundles/vim-surround"]
+	path = vim_bundles/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim_bundles/ack.vim"]
+	path = vim_bundles/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim_bundles/tcomment_vim"]
+	path = vim_bundles/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
+[submodule "vim_bundles/tabular"]
+	path = vim_bundles/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim_bundles/vim-abolish"]
+	path = vim_bundles/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "vim_bundles/vim-mkdir"]
+	path = vim_bundles/vim-mkdir
+	url = https://github.com/pbrisbin/vim-mkdir
+[submodule "vim_bundles/vim-css-color"]
+	path = vim_bundles/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule "vim_bundles/ale"]
+	path = vim_bundles/ale
+	url = https://github.com/w0rp/ale
+[submodule "vim_bundles/MatchTagAlways"]
+	path = vim_bundles/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways
+[submodule "vim_bundles/vim-closetag"]
+	path = vim_bundles/vim-closetag
+	url = https://github.com/alvan/vim-closetag
+[submodule "vim_bundles/editorconfig-vim"]
+	path = vim_bundles/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim_bundles/denite.nvim"]
+	path = vim_bundles/denite.nvim
+	url = https://github.com/Shougo/denite.nvim
+[submodule "vim_bundles/vim-rooter"]
+	path = vim_bundles/vim-rooter
+	url = https://github.com/airblade/vim-rooter
+[submodule "vim_bundles/YouCompleteMe"]
+	path = vim_bundles/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
