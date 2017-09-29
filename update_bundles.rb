@@ -28,6 +28,7 @@ git_bundles = [
 	#utils
 	"git://github.com/tpope/vim-repeat.git", # let plugins use `.`
 	"git://github.com/tpope/vim-surround.git", # surround with common start/ends
+	"https://github.com/Raimondi/delimitMate", # close brackets, parens, etc.
 	"git://github.com/mileszs/ack.vim.git", # ack support
 	"https://github.com/tomtom/tcomment_vim", # commenting
 	"git://github.com/godlygeek/tabular.git", # align by regex

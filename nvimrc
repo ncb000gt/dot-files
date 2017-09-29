@@ -169,20 +169,17 @@ if has("autocmd")
   autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
-  "autocmd FileType java set tags=~/.trunk-tags
   autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
 	" highlight characters past column 120
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 	autocmd FileType python match Excess /\%120v.*/
 
   " code completion
-  "autocmd FileType python set omnifunc=python#completions
 	autocmd FileType java setlocal omnifunc=javacomplete#Complete
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   autocmd FileType c set omnifunc=ccomplete#Complete
 
   " config files need styles/syntax too?
@@ -274,6 +271,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'javascript': ['eslint'],
 \   'go': ['golint'],
+\   'java': ['javac'],
 \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

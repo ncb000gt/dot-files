@@ -97,3 +97,6 @@
 [submodule "vim_bundles/YouCompleteMe"]
 	path = vim_bundles/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim_bundles/delimitMate"]
+	path = vim_bundles/delimitMate
+	url = https://github.com/Raimondi/delimitMate
