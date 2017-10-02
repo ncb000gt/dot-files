@@ -297,3 +297,6 @@ noremap <silent> =JF :%!python -m json.tool<CR> :setfiletype json<CR>
 " denite
 call denite#custom#var('file_rec', 'command',
 	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+" put line break between expansion
+let delimitMate_expand_cr = 1
