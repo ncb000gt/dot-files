@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/ncampbell/Code/it.com/solutions/recservice/src/test/java/com/it/recservice/tracking'
+let g:netrw_dirhist_2='/Users/ncampbell/Code/it.com/solutions/lambdas/update-by-query'
+let g:netrw_dirhist_3='/Users/ncampbell/Code/it.com/solutions/agent-access/app/resources'
+let g:netrw_dirhist_4='/Users/ncampbell/Code/it.com/aws-checks/index.js'
+let g:netrw_dirhist_5='/Users/ncampbell/Code/it.com/solutions/lambdas/enrich_metadata'

@@ -165,10 +165,11 @@ if has("autocmd")
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 
 	" filetype specific settings
+	autocmd FileType markdown setlocal wrap linebreak textwidth=80 nolist
   autocmd FileType jade setlocal commentstring=//-\ %s
   autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
   autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
 	" highlight characters past column 120
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black

@@ -100,3 +100,6 @@
 [submodule "vim_bundles/delimitMate"]
 	path = vim_bundles/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "prezto"]
+	path = prezto
+	url = https://github.com/sorin-ionescu/prezto.git
