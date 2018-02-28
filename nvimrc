@@ -273,6 +273,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'go': ['golint'],
 \   'java': ['javac'],
+\   'dart': ['dartanalyzer']
 \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -283,7 +284,7 @@ let g:mta_filetypes = {
     \ 'xhtml' : 1,
     \ 'xml' : 1,
     \ 'jinja' : 1,
-    \ 'javascript.jsx' : 1,
+    \ 'javascript.jsx' : 1
     \}
 
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.jsx,*.html.erb'

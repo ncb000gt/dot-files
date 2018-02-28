@@ -103,3 +103,6 @@
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "vim_bundles/dart-vim-plugin"]
+	path = vim_bundles/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin

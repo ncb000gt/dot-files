@@ -13,6 +13,7 @@ git_bundles = [
 	"https://github.com/fatih/vim-go",
 	"git://github.com/tpope/vim-markdown.git",
 	"https://github.com/artur-shaik/vim-javacomplete2.git",
+	"https://github.com/dart-lang/dart-vim-plugin",
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",
