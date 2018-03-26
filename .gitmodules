@@ -73,6 +73,39 @@
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/sorin-ionescu/prezto.git
-[submodule "vim_bundles/vim-polyglot"]
-	path = vim_bundles/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim_bundles/vim-ruby"]
+	path = vim_bundles/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim_bundles/vim-scala"]
+	path = vim_bundles/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "vim_bundles/vimerl"]
+	path = vim_bundles/vimerl
+	url = git://github.com/oscarh/vimerl.git
+[submodule "vim_bundles/vim-elixir"]
+	path = vim_bundles/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "vim_bundles/vim-javascript"]
+	path = vim_bundles/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim_bundles/vim-jsx"]
+	path = vim_bundles/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "vim_bundles/vim-json"]
+	path = vim_bundles/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule "vim_bundles/python-mode"]
+	path = vim_bundles/python-mode
+	url = https://github.com/python-mode/python-mode
+[submodule "vim_bundles/vim-go"]
+	path = vim_bundles/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "vim_bundles/vim-markdown"]
+	path = vim_bundles/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim_bundles/dart-vim-plugin"]
+	path = vim_bundles/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin
+[submodule "vim_bundles/html5.vim"]
+	path = vim_bundles/html5.vim
+	url = https://github.com/othree/html5.vim
