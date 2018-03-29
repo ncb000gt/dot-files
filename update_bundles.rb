@@ -2,15 +2,15 @@
 
 git_bundles = [ 
 	#language support
-	"git://github.com/vim-ruby/vim-ruby.git",	
-	"https://github.com/derekwyatt/vim-scala.git",	
-	"git://github.com/oscarh/vimerl.git",	
-	"https://github.com/elixir-lang/vim-elixir",	
-	"https://github.com/pangloss/vim-javascript",	
-	"https://github.com/mxw/vim-jsx",	
-	"https://github.com/elzr/vim-json",	
-	"https://github.com/python-mode/python-mode",	
-	"https://github.com/fatih/vim-go",	
+	"git://github.com/vim-ruby/vim-ruby.git",
+	"https://github.com/derekwyatt/vim-scala.git",
+	"git://github.com/oscarh/vimerl.git",
+	"https://github.com/elixir-lang/vim-elixir",
+	"https://github.com/pangloss/vim-javascript",
+	"https://github.com/mxw/vim-jsx",
+	"https://github.com/elzr/vim-json",
+	"https://github.com/python-mode/python-mode",
+	"https://github.com/fatih/vim-go",
 	"git://github.com/tpope/vim-markdown.git",
 	"https://github.com/artur-shaik/vim-javacomplete2.git",
 	# "https://github.com/sheerun/vim-polyglot", # a ton of syntaxes lazily loaded
