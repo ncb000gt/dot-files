@@ -16,6 +16,7 @@ git_bundles = [
 	# "https://github.com/sheerun/vim-polyglot", # a ton of syntaxes lazily loaded
 	"https://github.com/dart-lang/dart-vim-plugin",
 	"https://github.com/othree/html5.vim",
+	"https://github.com/HerringtonDarkholme/yats.vim",
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",

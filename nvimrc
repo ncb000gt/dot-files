@@ -1,9 +1,9 @@
 let os = substitute(system('uname'), "\n", "", "")
 
 if os == "Linux"
-    " Needed on some linux distros.
-    " see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-    filetype off 
+		" Needed on some linux distros.
+		" see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+		filetype off 
 endif 
 
 " turn ale on
@@ -21,13 +21,13 @@ set shiftwidth=2
 " show whitespace chrs
 set list
 if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+	set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
 " Lose the GUI
 if has("gui_running")
-    set guioptions=egmrt
-    set guifont=Inconsolata\ 8
+		set guioptions=egmrt
+		set guifont=Inconsolata\ 8
 endif
 
 " Increase or decrease the font size
@@ -35,27 +35,27 @@ let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
 let s:minfontsize = 6
 let s:maxfontsize = 16
 function! AdjustFontSize(amount)
-  if has("gui_gtk2") && has("gui_running")
-    let fontname = substitute(&guifont, s:pattern, '\1', '')
-    let cursize = substitute(&guifont, s:pattern, '\2', '')
-    let newsize = cursize + a:amount
-    if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
-      let newfont = fontname . newsize
-      let &guifont = newfont
-    endif
-    set columns=120
-  else
-    echoerr "You need to run the GTK2 version of Vim to use this function."
-  endif
+	if has("gui_gtk2") && has("gui_running")
+		let fontname = substitute(&guifont, s:pattern, '\1', '')
+		let cursize = substitute(&guifont, s:pattern, '\2', '')
+		let newsize = cursize + a:amount
+		if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
+			let newfont = fontname . newsize
+			let &guifont = newfont
+		endif
+		set columns=120
+	else
+		echoerr "You need to run the GTK2 version of Vim to use this function."
+	endif
 endfunction
 
 function! LargerFont()
-  call AdjustFontSize(1)
+	call AdjustFontSize(1)
 endfunction
 command! LargerFont call LargerFont()
 
 function! SmallerFont()
-  call AdjustFontSize(-1)
+	call AdjustFontSize(-1)
 endfunction
 command! SmallerFont call SmallerFont()
 
@@ -115,7 +115,7 @@ set listchars=tab:▸\ ,eol:¬
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" CTRL-U in insert mode deletes a lot.	Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
@@ -127,70 +127,70 @@ set t_Co=16 " done to ensure Nord color scheme works properly
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
+	syntax on
+	set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+	" Enable file type detection.
+	" Use the default filetype settings, so that mail gets 'tw' set to 72,
+	" 'cindent' is on in C files, etc.
+	" Also load indent files, to automatically do language-dependent indenting.
+	filetype plugin indent on
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-    au!
+	" Put these in an autocmd group, so that we can delete them easily.
+	augroup vimrcEx
+		au!
 
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=120
+		" For all text files set 'textwidth' to 78 characters.
+		autocmd FileType text setlocal textwidth=120
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-    autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+		" When editing a file, always jump to the last known cursor position.
+		" Don't do it when the position is invalid or when inside an event handler
+		" (happens when dropping a file on gvim).
+		" Also don't do it when the mark is in the first line, that is the default
+		" position when opening a file.
+		autocmd BufReadPost *
+			\ if line("'\"") > 1 && line("'\"") <= line("$") |
+			\	 exe "normal! g`\"" |
+			\ endif
 
-  augroup END
+	augroup END
 
-  " Markdown stuff
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
+	" Markdown stuff
+	autocmd BufRead *.mkd	set ai formatoptions=tcroqn2 comments=n:>
+	autocmd BufRead *.md	set ai formatoptions=tcroqn2 comments=n:>
+	autocmd BufRead *.markdown	set ai formatoptions=tcroqn2 comments=n:>
 
 	" filetype specific settings
 	autocmd FileType markdown setlocal wrap linebreak textwidth=80 nolist
-  autocmd FileType jade setlocal commentstring=//-\ %s
-  autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-  autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
+	autocmd FileType jade setlocal commentstring=//-\ %s
+	autocmd FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
+	autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+	autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+	autocmd FileType python setlocal nowrap expandtab shiftwidth=4 tabstop=4 softtabstop=4
 	" highlight characters past column 120
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 	autocmd FileType python match Excess /\%120v.*/
 
-  " code completion
+	" code completion
 	autocmd FileType java setlocal omnifunc=javacomplete#Complete
-  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType c set omnifunc=ccomplete#Complete
+	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+	autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+	autocmd FileType c set omnifunc=ccomplete#Complete
 
-  " config files need styles/syntax too?
-  autocmd BufNewFile,BufRead .babelrc set filetype=javascript
-  autocmd BufNewFile,BufRead .eslintrc,.reduxrc set filetype=json
-  autocmd BufNewFile,BufRead gitconfig set filetype=gitconfig
+	" config files need styles/syntax too?
+	autocmd BufNewFile,BufRead .babelrc set filetype=javascript
+	autocmd BufNewFile,BufRead .eslintrc,.reduxrc set filetype=json
+	autocmd BufNewFile,BufRead gitconfig set filetype=gitconfig
 
 else
 
-  set autoindent " always set autoindenting on
+	set autoindent " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -198,8 +198,8 @@ endif " has("autocmd")
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+			\ | wincmd p | diffthis
 endif
 
 " Tab mappings
@@ -209,7 +209,7 @@ endif
 
 " Ack
 if os == "Linux"
-    let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+		let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
 
 "Backup control
@@ -269,23 +269,23 @@ let g:ale_sign_warning = 'WW'
 let g:ale_sign_column_always = 1
 let g:ale_python_flake8_args = '--max-line-length=120'
 let g:ale_linters = {
-\   'python': ['flake8'],
-\   'javascript': ['eslint'],
-\   'go': ['golint'],
-\   'java': ['javac'],
-\   'dart': ['dartanalyzer']
+\	 'python': ['flake8'],
+\	 'javascript': ['eslint'],
+\	 'go': ['golint'],
+\	 'java': ['javac'],
+\	 'dart': ['dartanalyzer']
 \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 nnoremap <leader>] :MtaJumpToOtherTag<cr>
 let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'javascript.jsx' : 1
-    \}
+		\ 'html' : 1,
+		\ 'xhtml' : 1,
+		\ 'xml' : 1,
+		\ 'jinja' : 1,
+		\ 'javascript.jsx' : 1
+		\}
 
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.jsx,*.html.erb'
 
