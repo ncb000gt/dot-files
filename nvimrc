@@ -228,7 +228,7 @@ noremap <Right> <nop>
 
 " themes
 let g:theme_style = 'dark'
-function! s:SwitchPSCStyle()
+function! s:SwitchThemeStyle()
   if exists('g:theme_style')
     if g:theme_style == 'light'
       let g:theme_style = 'dark'
@@ -240,11 +240,13 @@ function! s:SwitchPSCStyle()
   endif
 
 	if g:theme_style == 'dark'
+		set background=dark
 		colorscheme nord
-		let g:airline_theme='nord'
+		" let g:airline_theme='nord'
 	else
-		colorscheme papercolor
-		let g:airline_theme='papercolor'
+		set background=light
+		colorscheme PaperColor
+		" let g:airline_theme='papercolor'
 	endif
 endfunction
 nmap <leader>t :call <SID>SwitchThemeStyle()<CR>
@@ -260,7 +262,7 @@ set spell spelllang=en_us
 set laststatus=2 "always show status
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='nord'
+" let g:airline_theme='nord'
 
 " gitgutter
 let g:gitgutter_sign_modified = '•'

@@ -112,3 +112,9 @@
 [submodule "vim_bundles/yats.vim"]
 	path = vim_bundles/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim
+[submodule "vim_bundles/vim-ft-bzl"]
+	path = vim_bundles/vim-ft-bzl
+	url = https://github.com/bazelbuild/vim-ft-bzl
+[submodule "vim_bundles/papercolor-theme"]
+	path = vim_bundles/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
