@@ -1,6 +1,13 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =4
+<<<<<<< Updated upstream
 let g:netrw_dirhist_1='/home/nick/Code/fitfam/ui/commonui/src/containers/create-workout'
 let g:netrw_dirhist_2='/home/nick/Code/fitfam/ui/commonui/src/components/create-program'
 let g:netrw_dirhist_3='/home/nick/Code/fitfam/manage'
 let g:netrw_dirhist_4='/home/nick/Code/fitfam/server/src/middleware'
+=======
+let g:netrw_dirhist_1='/Users/ncampbell/Code/fitfam/mobile/lib/services'
+let g:netrw_dirhist_2='/Users/ncampbell/Code/flutter-plugins/packages/image_picker'
+let g:netrw_dirhist_3='/Users/ncampbell/Code/fitfam/server/tests/middleware'
+let g:netrw_dirhist_4='/Users/ncampbell/Code/fitfam/server/src/db'
+>>>>>>> Stashed changes

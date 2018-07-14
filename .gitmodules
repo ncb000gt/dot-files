@@ -118,3 +118,6 @@
 [submodule "vim_bundles/papercolor-theme"]
 	path = vim_bundles/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme
+[submodule "vim_bundles/swift.vim"]
+	path = vim_bundles/swift.vim
+	url = https://github.com/keith/swift.vim

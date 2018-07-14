@@ -17,6 +17,10 @@ git_bundles = [
 	"https://github.com/dart-lang/dart-vim-plugin", # dart
 	"https://github.com/othree/html5.vim", # html5
 	"https://github.com/HerringtonDarkholme/yats.vim", #type script
+	"https://github.com/dart-lang/dart-vim-plugin",
+	"https://github.com/othree/html5.vim",
+	"https://github.com/HerringtonDarkholme/yats.vim", # typescript
+	"https://github.com/keith/swift.vim",
 	"https://github.com/bazelbuild/vim-ft-bzl",  # bazel
 
 	#python utils
