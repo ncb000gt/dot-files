@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/ncampbell/Code/it.com/lambdas/recohub-clientid'
-let g:netrw_dirhist_2='/Users/ncampbell/Code/it.com/lambdas/recohub-client-settings'
-let g:netrw_dirhist_3='/Users/ncampbell/Code/it.com/solutions/agent-access/app/tasks'
-let g:netrw_dirhist_4='/Users/ncampbell/Code/it.com/nagbot'
-let g:netrw_dirhist_5='/Users/ncampbell/Code/it.com/lambdas/enrich-last-search'
-let g:netrw_dirhist_6='/Users/ncampbell/Code/it.com/docservice/docservice-client-js'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/nick/Code/fitfam/ui/commonui/src/containers/create-workout'
+let g:netrw_dirhist_2='/home/nick/Code/fitfam/ui/commonui/src/components/create-program'
+let g:netrw_dirhist_3='/home/nick/Code/fitfam/manage'
+let g:netrw_dirhist_4='/home/nick/Code/fitfam/server/src/middleware'
