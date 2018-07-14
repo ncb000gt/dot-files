@@ -2,21 +2,22 @@
 
 git_bundles = [ 
 	#language support
-	"git://github.com/vim-ruby/vim-ruby.git",
-	"https://github.com/derekwyatt/vim-scala.git",
-	"git://github.com/oscarh/vimerl.git",
-	"https://github.com/elixir-lang/vim-elixir",
-	"https://github.com/pangloss/vim-javascript",
-	"https://github.com/mxw/vim-jsx",
-	"https://github.com/elzr/vim-json",
-	"https://github.com/python-mode/python-mode",
-	"https://github.com/fatih/vim-go",
-	"git://github.com/tpope/vim-markdown.git",
-	"https://github.com/artur-shaik/vim-javacomplete2.git",
+	"git://github.com/vim-ruby/vim-ruby.git", # ruby
+	"https://github.com/derekwyatt/vim-scala.git", # scala
+	"git://github.com/oscarh/vimerl.git", # erlang
+	"https://github.com/elixir-lang/vim-elixir", # elixir
+	"https://github.com/pangloss/vim-javascript", # javascript
+	"https://github.com/mxw/vim-jsx", # jsx
+	"https://github.com/elzr/vim-json", # json
+	"https://github.com/python-mode/python-mode", # python
+	"https://github.com/fatih/vim-go", # go
+	"git://github.com/tpope/vim-markdown.git", # md
+	"https://github.com/artur-shaik/vim-javacomplete2.git", # java
 	# "https://github.com/sheerun/vim-polyglot", # a ton of syntaxes lazily loaded
-	"https://github.com/dart-lang/dart-vim-plugin",
-	"https://github.com/othree/html5.vim",
-	"https://github.com/HerringtonDarkholme/yats.vim",
+	"https://github.com/dart-lang/dart-vim-plugin", # dart
+	"https://github.com/othree/html5.vim", # html5
+	"https://github.com/HerringtonDarkholme/yats.vim", #type script
+	"https://github.com/bazelbuild/vim-ft-bzl",  # bazel
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",
@@ -27,7 +28,8 @@ git_bundles = [
 
 	#theming
 	"https://github.com/vim-airline/vim-airline",
-	"https://github.com/arcticicestudio/nord-vim",
+	"https://github.com/arcticicestudio/nord-vim", # dark theme (default)
+	"https://github.com/NLKNguyen/papercolor-theme", # light theme
 
 	#utils
 	"git://github.com/tpope/vim-repeat.git", # let plugins use `.`

@@ -184,6 +184,8 @@ if has("autocmd")
 	autocmd FileType c set omnifunc=ccomplete#Complete
 
 	" config files need styles/syntax too?
+	autocmd BufNewFile,BufRead *.bazel set filetype=bzl
+	autocmd BufNewFile,BufRead *.bzl set filetype=bzl
 	autocmd BufNewFile,BufRead .babelrc set filetype=javascript
 	autocmd BufNewFile,BufRead .eslintrc,.reduxrc set filetype=json
 	autocmd BufNewFile,BufRead gitconfig set filetype=gitconfig
@@ -224,6 +226,29 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" themes
+let g:theme_style = 'dark'
+function! s:SwitchPSCStyle()
+  if exists('g:theme_style')
+    if g:theme_style == 'light'
+      let g:theme_style = 'dark'
+    elseif g:theme_style  == 'dark'
+      let g:theme_style = 'light'
+    endif
+  else
+    let g:theme_style = 'dark'
+  endif
+
+	if g:theme_style == 'dark'
+		colorscheme nord
+		let g:airline_theme='nord'
+	else
+		colorscheme papercolor
+		let g:airline_theme='papercolor'
+	endif
+endfunction
+nmap <leader>t :call <SID>SwitchThemeStyle()<CR>
+
 " Load colorscheme
 syntax enable
 colorscheme nord
@@ -235,6 +260,7 @@ set spell spelllang=en_us
 set laststatus=2 "always show status
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme='nord'
 
 " gitgutter
 let g:gitgutter_sign_modified = '•'

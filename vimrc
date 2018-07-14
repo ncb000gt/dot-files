@@ -22,8 +22,6 @@ set softtabstop=2
 set shiftwidth=2
 "set expandtab
 
-set list
-
 " Lose the GUI
 if has("gui_running")
     set guioptions=egmrt
@@ -106,8 +104,10 @@ let mapleader = ","
 " Shortcut to rapidly toggle whitespace
 nmap <leader>l :set list!<CR>
  
+set encoding=utf-8
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
+set list
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
