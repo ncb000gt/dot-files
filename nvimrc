@@ -295,7 +295,7 @@ let g:go_fmt_command = "goimports"
 let g:ale_sign_error = 'EE'
 let g:ale_sign_warning = 'WW'
 let g:ale_sign_column_always = 1
-let g:ale_python_flake8_args = '--max-line-length=120'
+let g:ale_python_flake8_options = '--max-line-length=120'
 let g:ale_linters = {
 \	 'python': ['flake8'],
 \	 'javascript': ['eslint'],
