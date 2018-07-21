@@ -70,9 +70,6 @@
 [submodule "vim_bundles/delimitMate"]
 	path = vim_bundles/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "prezto"]
-	path = prezto
-	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "vim_bundles/vim-ruby"]
 	path = vim_bundles/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
@@ -94,9 +91,6 @@
 [submodule "vim_bundles/vim-json"]
 	path = vim_bundles/vim-json
 	url = https://github.com/elzr/vim-json
-[submodule "vim_bundles/python-mode"]
-	path = vim_bundles/python-mode
-	url = https://github.com/python-mode/python-mode
 [submodule "vim_bundles/vim-go"]
 	path = vim_bundles/vim-go
 	url = https://github.com/fatih/vim-go
@@ -121,3 +115,12 @@
 [submodule "vim_bundles/swift.vim"]
 	path = vim_bundles/swift.vim
 	url = https://github.com/keith/swift.vim
+[submodule "zprezto"]
+	path = prezto
+	url = https://github.com/ncb000gt/prezto.git
+[submodule "python_mode"]
+	path = vim_bundles/python-mode
+	url = https://github.com/python-mode/python-mode
+[submodule "nord-iterm2"]
+	path = nord-iterm2
+	url = https://github.com/arcticicestudio/nord-iterm2
