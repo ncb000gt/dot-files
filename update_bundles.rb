@@ -22,6 +22,7 @@ git_bundles = [
 	"https://github.com/HerringtonDarkholme/yats.vim", # typescript
 	"https://github.com/keith/swift.vim",
 	"https://github.com/bazelbuild/vim-ft-bzl",  # bazel
+  "https://github.com/digitaltoad/vim-pug.git",
 
 	#python utils
 	"https://github.com/jmcantrell/vim-virtualenv",

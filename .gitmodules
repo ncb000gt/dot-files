@@ -124,3 +124,6 @@
 [submodule "nord-iterm2"]
 	path = nord-iterm2
 	url = https://github.com/arcticicestudio/nord-iterm2
+[submodule "vim_bundles/vim-pug"]
+	path = vim_bundles/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git
