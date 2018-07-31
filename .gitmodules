@@ -127,3 +127,6 @@
 [submodule "vim_bundles/vim-pug"]
 	path = vim_bundles/vim-pug
 	url = https://github.com/digitaltoad/vim-pug.git
+[submodule "vim_bundles/vim-illuminate"]
+	path = vim_bundles/vim-illuminate
+	url = https://github.com/RRethy/vim-illuminate

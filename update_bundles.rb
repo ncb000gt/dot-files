@@ -53,6 +53,7 @@ git_bundles = [
 	"https://github.com/Shougo/denite.nvim", # user interfaces
 	"https://github.com/airblade/vim-rooter", # set vim working dir
 	"https://github.com/Valloric/YouCompleteMe", # code completion
+  "https://github.com/RRethy/vim-illuminate", # highlight same words in the buffer
 ]
 
 vim_org_scripts = [
