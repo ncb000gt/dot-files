@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/ncampbell/Code/fitfam/mobile/lib/services'
-let g:netrw_dirhist_2='/Users/ncampbell/Code/flutter-plugins/packages/image_picker'
-let g:netrw_dirhist_3='/Users/ncampbell/Code/fitfam/server/tests/middleware'
-let g:netrw_dirhist_4='/Users/ncampbell/Code/fitfam/server/src/db'
-let g:netrw_dirhist_5='/Users/nick/Code/fitfam/server/tests/middleware'
-let g:netrw_dirhist_6='/Users/nick/Code/fitfam/server/src/middleware'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/nick/Code/fitfam/blog/content/blog/hello-world'
+let g:netrw_dirhist_2='/Users/nick/Code/FlutterOAuth'

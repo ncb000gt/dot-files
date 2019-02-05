@@ -130,3 +130,6 @@
 [submodule "vim_bundles/vim-illuminate"]
 	path = vim_bundles/vim-illuminate
 	url = https://github.com/RRethy/vim-illuminate
+[submodule "vim_bundles/vim-ios"]
+	path = vim_bundles/vim-ios
+	url = https://github.com/eraserhd/vim-ios
